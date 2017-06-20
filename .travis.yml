@@ -1,0 +1,32 @@
+language: php
+
+sudo: false
+
+cache:
+    directories:
+        - "$HOME/.composer/cache"
+
+env:
+  - COMPOSER_FLAGS="--prefer-stable"
+
+php:
+    - '7.0'
+    - '7.1'
+    - nightly
+
+matrix:
+  include:
+    - php: 7.0
+      env: COMPOSER_FLAGS="--prefer-lowest"
+    - php: 7.0
+      env: COMPOSER_FLAGS=""
+    - php: 7.1
+      env: COMPOSER_FLAGS="--prefer-lowest"
+    - php: 7.1
+      env: COMPOSER_FLAGS=""
+  allow_failures:
+    - php: nightly
+
+install: composer update $COMPOSER_FLAGS --prefer-dist
+
+script: vendor/bin/phpunit  --coverage-text
