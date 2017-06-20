@@ -1,0 +1,22 @@
+{
+    "name":        "hostnet/bank-holiday-component",
+    "description": "Component that provides bank holidays and business day dates",
+    "license":     "MIT",
+    "require": {
+        "php": "^7.0"
+    },
+    "require-dev": {
+        "hostnet/phpcs-tool": "^5.2.0",
+        "phpunit/phpunit":    "^6.2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hostnet\\Component\\BankHoliday\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Hostnet\\Component\\BankHoliday\\": "test/"
+        }
+    }
+}
