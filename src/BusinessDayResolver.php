@@ -59,6 +59,19 @@ class BusinessDayResolver
         return $date;
     }
 
+    public function getPreviousBusinessDay(\DateTime $date): \DateTime
+    {
+        $date = clone $date;
+        $date->setTime(0, 0, 0);
+        $date->sub(new \DateInterval('P1D'));
+
+        while (!$this->isBusinessDay($date)) {
+            $date->sub(new \DateInterval('P1D'));
+        }
+
+        return $date;
+    }
+
     public function isBusinessDay(\DateTime $date): bool
     {
         return $date->format('N') < 6 && empty($this->bank_holiday_resolver->getByDate($date));
