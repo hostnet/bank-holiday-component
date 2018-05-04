@@ -106,4 +106,26 @@ class BusinessDayResolverTest extends TestCase
             ['2017-12-29', '2018-01-02'],
         ];
     }
+
+    /**
+     * @dataProvider getPreviousBusinessDayProvider
+     */
+    public function testGetPreviousBusinessDay($date, $expected)
+    {
+        self::assertEquals(
+            new \DateTime($expected),
+            $this->business_day_resolver->getPreviousBusinessDay(new \DateTime($date))
+        );
+    }
+
+    public function getPreviousBusinessDayProvider()
+    {
+        return [
+            ['2017-05-30', '2017-05-29'],
+            ['2017-06-06', '2017-06-02'],
+            ['2018-01-01', '2017-12-29'],
+            ['2018-01-02', '2017-12-29'],
+            ['2018-05-11', '2018-05-09'],
+        ];
+    }
 }
