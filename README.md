@@ -13,7 +13,7 @@ Installation
 ------------
 Installation of the bundle can be done via [composer](https://getcomposer.org/) and is the recommended way of adding the bundle to your application. To do so, execute the following command to download the latest stable version of this bundle:
 ```bash
-composer require hostnet/phpcs-tool
+composer require hostnet/bank-holiday-component
 ```
 
 This command requires you to have Composer installed globally, as explained in the [installation chapter](https://getcomposer.org/doc/00-intro.md) of the Composer documentation.
