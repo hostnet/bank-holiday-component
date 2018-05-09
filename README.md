@@ -1,5 +1,8 @@
-# bank-holiday-component
-Component that provides bank holidays and business day dates.
+<p align="center"><a href="http://www.hostnet.nl" target="_blank">
+    <img width="400" src="https://www.hostnet.nl/images/hostnet.svg">
+</a></p>
+
+This component provides bank holidays and business day dates.
 The component is created to make it easy to calculate holidays
 in an extendable way.
 
@@ -8,10 +11,14 @@ pull requests for other (country's) bank holidays are welcome.
 
 Installation
 ------------
-Install the latest version via [composer](https://getcomposer.org/):
+Installation of the bundle can be done via [composer](https://getcomposer.org/) and is the recommended way of adding the bundle to your application. To do so, execute the following command to download the latest stable version of this bundle:
 ```bash
-php composer.phar require hostnet/bank-holiday-component
+composer require hostnet/bank-holiday-component
 ```
+
+This command requires you to have Composer installed globally, as explained in the [installation chapter](https://getcomposer.org/doc/00-intro.md) of the Composer documentation.
+
+This bundle and the component follow [semantic versioning](http://semver.org/) strictly.
 
 Usage
 -----
