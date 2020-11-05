@@ -145,12 +145,12 @@ class BankHolidayResolver
     private function getEasterSundayDate(int $year): \DateTime
     {
         $base = new \DateTime(sprintf('%d-03-21', $year));
-        $gm   = array(22, 22, 23, 23, 24, 24);
-        $da   = array(2, 2, 3, 4, 5, 5);
+        $gm   = [22, 22, 23, 23, 24, 24];
+        $da   = [2, 2, 3, 4, 5, 5];
         $a    = $year % 19;
         $b    = $year % 4;
         $c    = $year % 7;
-        $i    = bcsub(bcdiv((string)$year, '100'), '15');
+        $i    = bcsub(bcdiv((string) $year, '100'), '15');
         $d    = (19 * $a + $gm[$i]) % 30;
         $e    = (2 * $b + 4 * $c + 6 * $d + $da[$i]) % 7;
         $days = 1 + $d + $e;

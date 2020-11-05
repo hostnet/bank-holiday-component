@@ -2,7 +2,7 @@
 /**
  * @copyright 2017 Hostnet B.V.
  */
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Hostnet\Component\BankHoliday;
 
@@ -82,7 +82,7 @@ class BankHolidayResolverTest extends TestCase
             ['2017-06-05 00:00:00', 2017, BankHoliday::WHIT_MONDAY],
             ['2016-12-25 00:00:00', 2016, BankHoliday::CHRISTMAS_DAY],
             ['2016-12-26 00:00:00', 2016, BankHoliday::BOXING_DAY],
-            ['2016-05-05 00:00:00', 2016, BankHoliday::ASCENSION_DAY]
+            ['2016-05-05 00:00:00', 2016, BankHoliday::ASCENSION_DAY],
         ];
     }
 }
