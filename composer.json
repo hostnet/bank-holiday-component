@@ -3,7 +3,7 @@
     "description": "Component that provides bank holidays and business day dates",
     "license":     "MIT",
     "require": {
-        "php": "^7.0"
+        "php": "^7.3"
     },
     "require-dev": {
         "hostnet/phpcs-tool": "^8.3",
