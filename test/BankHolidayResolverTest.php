@@ -18,18 +18,18 @@ class BankHolidayResolverTest extends TestCase
      */
     private $bank_holiday_resolver;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->bank_holiday_resolver = new BankHolidayResolver();
     }
 
-    public function testCreateResolverWithNonExistingBankHoliday()
+    public function testCreateResolverWithNonExistingBankHoliday(): void
     {
         $this->expectException(\RuntimeException::class);
         new BankHolidayResolver(['symfony_con']);
     }
 
-    public function testGetAvailableBankHolidays()
+    public function testGetAvailableBankHolidays(): void
     {
         self::assertSame(BankHoliday::ALL, $this->bank_holiday_resolver->getAvailableBankHolidays());
     }
@@ -37,7 +37,7 @@ class BankHolidayResolverTest extends TestCase
     /**
      * @dataProvider findByDateProvider
      */
-    public function testFindByDate($date, $expected)
+    public function testFindByDate($date, $expected): void
     {
         self::assertEquals($expected, $this->bank_holiday_resolver->getByDate(new \DateTime($date)));
     }
@@ -53,7 +53,7 @@ class BankHolidayResolverTest extends TestCase
         ];
     }
 
-    public function testFindByTypeNoneFound()
+    public function testFindByTypeNoneFound(): void
     {
         self::assertNull($this->bank_holiday_resolver->getByType(BankHoliday::DUTCH_LIBERATION_DAY, 2019));
         self::assertNull($this->bank_holiday_resolver->getByType('', 2019));
@@ -62,7 +62,7 @@ class BankHolidayResolverTest extends TestCase
     /**
      * @dataProvider findByTypeProvider
      */
-    public function testFindByType($expected, $year, $type)
+    public function testFindByType($expected, $year, $type): void
     {
         self::assertEquals(new \DateTime($expected), $this->bank_holiday_resolver->getByType($type, $year));
     }

@@ -18,7 +18,7 @@ class BusinessDayResolverTest extends TestCase
      */
     private $business_day_resolver;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->business_day_resolver = new BusinessDayResolver(
             new BankHolidayResolver()
@@ -28,7 +28,7 @@ class BusinessDayResolverTest extends TestCase
     /**
      * @dataProvider getFirstBusinessDayOfWeekProvider
      */
-    public function testGetFirstBusinessDayOfWeek($year, $week, $expected)
+    public function testGetFirstBusinessDayOfWeek($year, $week, $expected): void
     {
         self::assertEquals(
             new \DateTime($expected),
@@ -49,7 +49,7 @@ class BusinessDayResolverTest extends TestCase
     /**
      * @dataProvider getLastBusinessDayOfMonthProvider
      */
-    public function testGetLastBusinessDayOfMonth($year, $month, $expected)
+    public function testGetLastBusinessDayOfMonth($year, $month, $expected): void
     {
         self::assertEquals(
             new \DateTime($expected),
@@ -68,7 +68,7 @@ class BusinessDayResolverTest extends TestCase
     /**
      * @dataProvider isBusinessDayProvider
      */
-    public function testIsBusinessDay($expected, $date)
+    public function testIsBusinessDay($expected, $date): void
     {
         self::assertSame($expected, $this->business_day_resolver->isBusinessDay(new \DateTime($date)));
     }
@@ -89,7 +89,7 @@ class BusinessDayResolverTest extends TestCase
     /**
      * @dataProvider getNextBusinessDayProvider
      */
-    public function testGetNextBusinessDay($date, $expected)
+    public function testGetNextBusinessDay($date, $expected): void
     {
         self::assertEquals(
             new \DateTime($expected),
@@ -110,7 +110,7 @@ class BusinessDayResolverTest extends TestCase
     /**
      * @dataProvider getPreviousBusinessDayProvider
      */
-    public function testGetPreviousBusinessDay($date, $expected)
+    public function testGetPreviousBusinessDay($date, $expected): void
     {
         self::assertEquals(
             new \DateTime($expected),
