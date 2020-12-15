@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
  */
 class BankHolidayTest extends TestCase
 {
-    public function testCollections()
+    public function testCollections(): void
     {
         $holidays = array_filter((new \ReflectionClass(BankHoliday::class))->getConstants(), function ($item) {
             return ! is_array($item);

@@ -7,7 +7,7 @@
     },
     "require-dev": {
         "hostnet/phpcs-tool": "^8.3",
-        "phpunit/phpunit":    "^6.2.0"
+        "phpunit/phpunit":    "^8.5.13"
     },
     "autoload": {
         "psr-4": {
