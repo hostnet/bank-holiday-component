@@ -39,7 +39,7 @@ foreach ($bank_holiday_resolver->getByDate(new \DateTime('2017-04-17')) as $bank
 Requirements
 ------------
 
-PHP 7.0.x or above.
+PHP 7.3.x or above.
 
 License
 -------
