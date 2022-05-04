@@ -18,5 +18,11 @@
         "psr-4": {
             "Hostnet\\Component\\BankHoliday\\": "test/"
         }
+    },
+    "config": {
+        "allow-plugins": {
+            "hostnet/*":                                      true,
+            "dealerdirect/phpcodesniffer-composer-installer": false
+        }
     }
 }
