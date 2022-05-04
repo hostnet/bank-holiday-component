@@ -168,6 +168,6 @@ class BankHolidayResolver
             return null;
         }
 
-        return new \DateTime(sprintf("%d-05-05", $year));
+        return new \DateTime(sprintf('%d-05-05', $year));
     }
 }
